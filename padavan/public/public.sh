@@ -49,6 +49,7 @@ sed -i "/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d" .config     # 删除配置项 smart
 sed -i "/CONFIG_FIRMWARE_INCLUDE_SRELAY/d" .config       # 删除配置项 srelay 代理
 sed -i "/CONFIG_FIRMWARE_INCLUDE_WYY/d" >> .config       # 删除配置项 网易云解锁
 sed -i "/CONFIG_FIRMWARE_INCLUDE_WYYBIN/d" >> .config    # 删除配置项 网易云解锁GO版本执行文件（4M多）注意固件超大小
+sed -i "/CONFIG_FIRMWARE_INCLUDE_TROJAN/d" >> .config
 # 3. 添加公共自定义功能，设备单个的到设备 sh文件中添加
 ######################################################################
 # 以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
@@ -58,6 +59,7 @@ sed -i "/CONFIG_FIRMWARE_INCLUDE_WYYBIN/d" >> .config    # 删除配置项 网�
 echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config  # SS plus+
 echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config     # SS server
 echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config # simple-obfs混淆插件
+echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config
 
 #  代理
 echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config       # SOCKS proxy
@@ -74,11 +76,6 @@ echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config    # KP广告过滤
 echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config # DNS-FORWARDER
 echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config     # smartdns
 echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> .config  # smartdns二进制文件
-
-#网易云解锁
-echo "CONFIG_FIRMWARE_INCLUDE_WYY=y" >> .config
-#网易云解锁GO版本执行文件（4M多）注意固件超大小
-echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config
 
 # 其他
 echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config    # MENTOHUST
