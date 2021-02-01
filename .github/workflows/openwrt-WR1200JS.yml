@@ -6,6 +6,7 @@ name: OpenWrt CI WR1200JS
 
 on:
   repository_dispatch:
+  workflow_dispatch:
 
 env:
   T_NAME: "WR1200JS"                     # 设备名字 (op编译慢所以直接单个的编译)
